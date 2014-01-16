@@ -1,0 +1,4 @@
+smagicadv
+=========
+
+Solar Magic Advance
