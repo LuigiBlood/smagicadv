@@ -15,5 +15,15 @@ namespace Solar_Magic_Advance
         {
             InitializeComponent();
         }
+
+        private void toolStripButton_Load_Click(object sender, EventArgs e)
+        {
+            openFileDialog_Level.ShowDialog();
+        }
+
+        private void openFileDialog_Level_FileOk(object sender, CancelEventArgs e)
+        {
+            Program.LoadLevel(this, openFileDialog_Level.FileName, openFileDialog_Level.OpenFile());
+        }
     }
 }

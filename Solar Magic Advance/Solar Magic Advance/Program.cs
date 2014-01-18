@@ -10,6 +10,8 @@ namespace Solar_Magic_Advance
     public static class LevelCard
     {
         //SMA4 Level Card Header
+        public static string loaded_file;
+
         public struct header
         {
             public byte eCoin;
@@ -44,15 +46,15 @@ namespace Solar_Magic_Advance
         {
             public UInt16 timeLimit;
             public UInt16 unk1;
-            public byte unk1;           //4-bit
+            public byte unk2;           //4-bit
             public byte roomlength;
             public byte bgColor;
             public byte scrollSet;      //4-bit
-            public byte unk2;           //4-bit
+            public byte unk3;           //4-bit
             public byte entryAction;    //3-bit
             public byte gfxset1;        //5-bit
             public byte gfxset2;        //4-bit
-            public byte unk3;           //4-bit
+            public byte unk4;           //4-bit
             public byte extColor;       //4-bit
             public byte extEffect;      //4-bit
             public byte bgGFX;
@@ -250,9 +252,9 @@ namespace Solar_Magic_Advance
         public static string getLevelIcon(byte lvl_icon)
         {
             if (lvl_icon < levelIcon.Length)
-                return levelIcon[lvl_icon];
+                return levelIcon[lvl_icon] + " (0x" + lvl_icon.ToString("X2") + ")";
             else
-                return "Invalid";
+                return "Invalid" + " (0x" + lvl_icon.ToString("X2") + ")";
         }
 
         public static byte getSpriteSize(byte bank, byte id)
@@ -270,7 +272,11 @@ namespace Solar_Magic_Advance
         {
             string name = "";
             for (int i = 0; i < lvl_name.Length; i++)
+            {
+                if (lvl_name[i] == 0xFF)
+                    break;
                 name += USFont[lvl_name[i]];
+            }
             return name;
         }
 
@@ -388,14 +394,76 @@ namespace Solar_Magic_Advance
             Application.Run(new Form1());
         }
 
-        static void NewLevel()
+        public static void InitLevel(Form1 _MainForm)
         {
             //TODO
+            LevelCard.header header;
+            header.eCoin = 0;
+            header.acecoins = 0;
+            header.lvl_class = 0;
+            header.lvl_icon = 0;
+            header.lvl_num = 0;
+            header.lvl_name = "New Level Card";
+            LevelCard.level_header = header;
         }
 
-        static void LoadLevel()
+        public static void InitTreeView(Form1 _MainForm)
+        {
+            _MainForm.treeView1.Nodes[0].Nodes[0].Text = "eCoin: ";
+            _MainForm.treeView1.Nodes[0].Nodes[1].Text = "Ace Coins: ";
+            _MainForm.treeView1.Nodes[0].Nodes[2].Text = "Level Set: ";
+            _MainForm.treeView1.Nodes[0].Nodes[3].Text = "Level Number: ";
+            _MainForm.treeView1.Nodes[0].Nodes[4].Text = "Level Icon: ";
+            _MainForm.treeView1.Nodes[0].Nodes[5].Text = "Level Name: ";
+        }
+
+        public static void UpdateTreeView(Form1 _MainForm)
+        {
+            //Header
+            _MainForm.treeView1.Nodes[0].Nodes[0].Text += LevelCard.get_eCoin_position(LevelCard.level_header.eCoin);
+            _MainForm.treeView1.Nodes[0].Nodes[1].Text += LevelCard.level_header.acecoins.ToString();
+            _MainForm.treeView1.Nodes[0].Nodes[2].Text += LevelCard.getLevelSet(LevelCard.level_header.lvl_class);
+            _MainForm.treeView1.Nodes[0].Nodes[3].Text += LevelCard.level_header.lvl_num.ToString();
+            _MainForm.treeView1.Nodes[0].Nodes[4].Text += LevelCard.getLevelIcon(LevelCard.level_header.lvl_icon);
+            _MainForm.treeView1.Nodes[0].Nodes[5].Text += LevelCard.level_header.lvl_name;
+        }
+
+        public static void LoadLevel(Form1 _MainForm, string filename, Stream file)
         {
             //TODO
+            //Load File (*.level)
+            InitLevel(_MainForm);
+            InitTreeView(_MainForm);
+            LevelCard.loaded_file = filename;
+            file.Seek(0, SeekOrigin.Begin);
+            LevelCard.header header;
+
+            //Load Header
+            header.eCoin = (byte)file.ReadByte();
+            header.acecoins = (byte)file.ReadByte();
+            header.lvl_class = (byte)file.ReadByte();
+            header.lvl_num = (byte)file.ReadByte();
+            header.lvl_icon = (byte)file.ReadByte();
+
+            if (header.eCoin == 0)
+                file.Seek(0x40, SeekOrigin.Begin);
+            else
+                file.Seek(0x180, SeekOrigin.Begin);
+
+            byte[] name = new byte[21];
+            for (int i = 0; i < 21; i++)
+            {
+                name[i] = (byte)file.ReadByte();
+                if (name[i] == 0xFF)
+                    break;
+            }
+
+            header.lvl_name = LevelCard.getLevelName(name);
+
+            LevelCard.level_header = header;
+
+            UpdateTreeView(_MainForm);
+            //Load Objects
         }
     }
 }

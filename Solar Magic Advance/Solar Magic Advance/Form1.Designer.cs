@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("eCoin:", 2, 2);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Ace Coins:", 2, 2);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Level Set:", 2, 2);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Level Number:", 2, 2);
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Level Icon:", 2, 2);
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Level Name:", 2, 2);
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("eCoin: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Ace Coins: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Level Set: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Level Number: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Level Icon: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Level Name: ", 2, 2);
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Header", 2, 2, new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
@@ -114,15 +114,15 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_New = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Load = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Make = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog_Level = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -202,57 +202,62 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
+            this.toolStripButton_New,
+            this.toolStripButton_Load,
+            this.toolStripButton_Save,
             this.toolStripSeparator2,
-            this.toolStripButton4});
+            this.toolStripButton_Make});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(406, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButton_New
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Solar_Magic_Advance.Properties.Resources.New;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton_New.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_New.Image = global::Solar_Magic_Advance.Properties.Resources.New;
+            this.toolStripButton_New.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_New.Name = "toolStripButton_New";
+            this.toolStripButton_New.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_New.Text = "toolStripButton1";
+            this.toolStripButton_New.ToolTipText = "New Level";
             // 
-            // toolStripButton2
+            // toolStripButton_Load
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Solar_Magic_Advance.Properties.Resources.Open;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton_Load.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_Load.Image = global::Solar_Magic_Advance.Properties.Resources.Open;
+            this.toolStripButton_Load.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Load.Name = "toolStripButton_Load";
+            this.toolStripButton_Load.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_Load.Text = "toolStripButton2";
+            this.toolStripButton_Load.ToolTipText = "Load Level...";
+            this.toolStripButton_Load.Click += new System.EventHandler(this.toolStripButton_Load_Click);
             // 
-            // toolStripButton3
+            // toolStripButton_Save
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Solar_Magic_Advance.Properties.Resources.Save;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton_Save.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_Save.Image = global::Solar_Magic_Advance.Properties.Resources.Save;
+            this.toolStripButton_Save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Save.Name = "toolStripButton_Save";
+            this.toolStripButton_Save.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_Save.Text = "toolStripButton3";
+            this.toolStripButton_Save.ToolTipText = "Save Level...";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton4
+            // toolStripButton_Make
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Solar_Magic_Advance.Properties.Resources.LevelCard;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton_Make.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_Make.Image = global::Solar_Magic_Advance.Properties.Resources.LevelCard;
+            this.toolStripButton_Make.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Make.Name = "toolStripButton_Make";
+            this.toolStripButton_Make.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_Make.Text = "toolStripButton4";
+            this.toolStripButton_Make.ToolTipText = "Make Level Card...";
             // 
             // statusStrip1
             // 
@@ -274,27 +279,27 @@
             treeNode1.ImageIndex = 2;
             treeNode1.Name = "head_ecoin";
             treeNode1.SelectedImageIndex = 2;
-            treeNode1.Text = "eCoin:";
+            treeNode1.Text = "eCoin: ";
             treeNode2.ImageIndex = 2;
             treeNode2.Name = "head_ace";
             treeNode2.SelectedImageIndex = 2;
-            treeNode2.Text = "Ace Coins:";
+            treeNode2.Text = "Ace Coins: ";
             treeNode3.ImageIndex = 2;
             treeNode3.Name = "head_set";
             treeNode3.SelectedImageIndex = 2;
-            treeNode3.Text = "Level Set:";
+            treeNode3.Text = "Level Set: ";
             treeNode4.ImageIndex = 2;
             treeNode4.Name = "head_num";
             treeNode4.SelectedImageIndex = 2;
-            treeNode4.Text = "Level Number:";
+            treeNode4.Text = "Level Number: ";
             treeNode5.ImageIndex = 2;
             treeNode5.Name = "head_icon";
             treeNode5.SelectedImageIndex = 2;
-            treeNode5.Text = "Level Icon:";
+            treeNode5.Text = "Level Icon: ";
             treeNode6.ImageIndex = 2;
             treeNode6.Name = "head_name";
             treeNode6.SelectedImageIndex = 2;
-            treeNode6.Text = "Level Name:";
+            treeNode6.Text = "Level Name: ";
             treeNode7.ImageIndex = 2;
             treeNode7.Name = "header";
             treeNode7.SelectedImageIndex = 2;
@@ -455,9 +460,11 @@
             this.imageList1.Images.SetKeyName(11, "Sprite.png");
             this.imageList1.Images.SetKeyName(12, "Transport.png");
             // 
-            // openFileDialog1
+            // openFileDialog_Level
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog_Level.Filter = "Uncompressed Level (*.level)|*.level|All files|*.*";
+            this.openFileDialog_Level.Title = "Load Level Card...";
+            this.openFileDialog_Level.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_Level_FileOk);
             // 
             // Form1
             // 
@@ -487,7 +494,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripMenuItem newLevelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openLevelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveLevelToolStripMenuItem;
@@ -495,15 +501,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton_New;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Load;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Save;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem makeLevelCardToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Make;
+        private System.Windows.Forms.OpenFileDialog openFileDialog_Level;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        public System.Windows.Forms.TreeView treeView1;
     }
 }
 
