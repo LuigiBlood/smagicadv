@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using System.Text;
 
 namespace Solar_Magic_Advance
 {
-    static class LevelCard
+    public static class LevelCard
     {
         //SMA4 Level Card Header
         public struct header
@@ -44,7 +45,7 @@ namespace Solar_Magic_Advance
             public UInt16 timeLimit;
             public UInt16 unk1;
             public byte unk1;           //4-bit
-            public byte roomlength;     //4-bit
+            public byte roomlength;
             public byte bgColor;
             public byte scrollSet;      //4-bit
             public byte unk2;           //4-bit
@@ -202,7 +203,123 @@ namespace Solar_Magic_Advance
             public byte speed;
         }
 
-        //----------
+        //------------------------------------Get stuff
+        public static string get_eCoin_position(byte position)
+        {
+            //8 e-Coins per floor, 3 floors total, 8*3 = 24
+            if (position == 0)
+                return "No";
+            else if (position <= 24)
+            {
+                int floor = (int)Math.Ceiling((double)(position/8));
+                int pos = position - ((floor-1)*8);
+                return floor.ToString() + "F, " + getOrdinal(pos);
+            }
+            else
+                return "Invalid";
+        }
+
+        public static string getOrdinal(int num)
+        {
+            if ((num > 3) && (num < 21))
+                return num.ToString() + "th";
+            else
+            {
+                switch (num % 10)
+                {
+                    case 1:
+                        return num.ToString() + "st";
+                    case 2:
+                        return num.ToString() + "nd";
+                    case 3:
+                        return num.ToString() + "rd";
+                    default:
+                        return num.ToString() + "th";
+                }
+            }
+        }
+
+        public static string getLevelSet(byte lvl_set)
+        {
+            if (lvl_set < levelSet.Length)
+                return levelSet[lvl_set];
+            else
+                return "Invalid";
+        }
+
+        public static string getLevelIcon(byte lvl_icon)
+        {
+            if (lvl_icon < levelIcon.Length)
+                return levelIcon[lvl_icon];
+            else
+                return "Invalid";
+        }
+
+        public static byte getSpriteSize(byte bank, byte id)
+        {
+            int fullID = (int)id ^ ((int)(bank << 8));
+            if (fullID < spriteSize.Length)
+                return spriteSize[fullID];
+            else if (fullID == 0x01AB)
+                return 5;
+            else
+                return 4;
+        }
+
+        public static string getLevelName(byte[] lvl_name)
+        {
+            string name = "";
+            for (int i = 0; i < lvl_name.Length; i++)
+                name += USFont[lvl_name[i]];
+            return name;
+        }
+
+        //---------------------------------Arrays
+        public static string[] USFont =
+        {
+            // # = Invalid
+            "A","B","C","D","E","F","G","H","I","J","K","L","M",
+            "N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+            "#","#","'",",",".","#",
+
+            "a","b","c","d","e","f","g","h","i","j","k","l","m",
+            "n","o","p","q","r","s","t","u","v","w","x","y","z",
+
+            "Ä","Ö","Ü","Â","À","Ç","É","È","Ê","Ë","Î","Ï","Ô","Œ",
+            "Ù","Û","Á","Í","Ñ","Ó","Ú","Ì","Ò",
+            "ä","ö","ü","ß","é","â","à","ç","è","ê","ë","î","ï","ô","œ",
+            "ù","û","á","í","ñ","ó","ú","ì","ò",
+
+            "°","[er]","[re]","e","¿","¡","a",
+            "”","“","’","‘","«","»",
+
+            "0","1","2","3","4","5","6","7","8","9",
+            "…","#","„","“","‚","‘",
+
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#","#","#","#","#","#","#","#","#",
+            "#","#",
+
+            "[Mushroom]","⚘","★","●","♥",
+
+            //Monospaced
+            "A","B","C","D","E","F","G","H","I","J","K","L","M",
+            "N","O","P","Q","R","S","T","U","#","#",
+
+            "?","!","-"," ",
+
+            "⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹",
+            "₀","₁","₂","₃","₄","₅","₆","₇","₈","₉",
+
+            //Monospaced (except e)
+            "e","V","W","X","Y","Z",
+
+            "[Promotional]","[Null]"
+        };
 
         public static byte[] spriteSize =
 	    {
@@ -229,17 +346,23 @@ namespace Solar_Magic_Advance
 		    5,5,5,5,5,5,4,4,4,5,4,4,4,4,4,4,
 		    4,5,5,5,5,5,5,5,5,5,5,5,6,5,5,5
 	    };
-	
-        public static byte getSpriteSize(byte bank, byte id)
+
+        public static string[] levelSet =
         {
-	        int fullID = (int)id ^ ((int)bank<<8);
-	        if (fullID < 0x160)
-		        return spriteSize[fullID];
-	        else if (fullID == 0x01AB)
-		        return 5;
-	        else
-		        return 4;
-        }
+            "e","Star","Mushroom","Flower","Heart",
+            "A","B","C","D","E","F","G","H","I","J","K","L","M",
+            "N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+            "Promotional"
+        };
+
+        public static string[] levelIcon =
+        {
+            "e+", "Star", "Desert", "Warp Zone", "Fortress", "Castle", "Tower", "Pyramid",
+            "Toad House (Yellow)", "Ghost House", "Airship", "Tank", "Airship (Cannon)",
+            "Airship (Small)", "Coin Ship", "Hand", "Cloud", "Plains", "Palm Tree", "Water",
+            "Flower", "Ice", "Piranha Plant", "Volcano", "Skull", "Hammer Bro.", "Boomerang Bro.",
+            "Sledge Bro.", "Fire Bro.", "Invalid", "Invalid", "No Icon"
+        };
 
         //Level Card components
         public static header level_header;
@@ -247,7 +370,7 @@ namespace Solar_Magic_Advance
         public static List<room>[] roomData;
     }
 
-    static class Compression
+    public static class Compression
     {
         //TODO
     }
