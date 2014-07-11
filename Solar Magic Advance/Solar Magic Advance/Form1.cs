@@ -25,5 +25,11 @@ namespace Solar_Magic_Advance
         {
             Program.LoadLevel(this, openFileDialog_Level.FileName, openFileDialog_Level.OpenFile());
         }
+
+        private void eCoinEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            eCoinEditor window = new eCoinEditor();
+            window.ShowDialog();
+        }
     }
 }

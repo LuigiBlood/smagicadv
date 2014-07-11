@@ -26,7 +26,7 @@ namespace Solar_Magic_Advance
         //SMA4 eCoin data
         public struct eCoin
         {
-            public byte[] pal;          //0x20 bytes
+            public ushort[] pal;          //0x20 bytes
             public byte[] gfx;          //0x120 bytes
         }
 
@@ -135,6 +135,14 @@ namespace Solar_Magic_Advance
             public byte center_scrY;
             public byte unk2;
             public byte exit_type;
+            /*
+                0 - Appear at X, Y (used for Doors)
+                1 - Come up from pipe
+                2 - Come down from pipe
+                3 - Come right from pipe
+                4 - Come Left from pipe
+                5 - Drop from X, Y
+             */
         }
 
         //SMA4 Sprite
@@ -214,7 +222,7 @@ namespace Solar_Magic_Advance
             else if (position <= 24)
             {
                 int floor = (int)Math.Ceiling((double)(position/8));
-                int pos = position - ((floor-1)*8);
+                int pos = position - (floor*8);
                 return floor.ToString() + "F, " + getOrdinal(pos);
             }
             else
@@ -327,6 +335,11 @@ namespace Solar_Magic_Advance
             "[Promotional]","[Null]"
         };
 
+        public static string[] JPFont =
+        {
+            "TODO"
+        };
+
         public static byte[] spriteSize =
 	    {
 		    4,6,4,4,4,4,4,4,4,4,4,4,4,4,4,5,
@@ -379,6 +392,22 @@ namespace Solar_Magic_Advance
     public static class Compression
     {
         //TODO
+        /*
+        void range()
+        {
+
+        }
+
+        void compress()
+        {
+
+        }
+
+        void decompress(Stream input)
+        {
+
+        }
+        */
     }
 
     static class Program
@@ -409,6 +438,7 @@ namespace Solar_Magic_Advance
 
         public static void InitTreeView(Form1 _MainForm)
         {
+            //Header
             _MainForm.treeView1.Nodes[0].Nodes[0].Text = "eCoin: ";
             _MainForm.treeView1.Nodes[0].Nodes[1].Text = "Ace Coins: ";
             _MainForm.treeView1.Nodes[0].Nodes[2].Text = "Level Set: ";
@@ -426,6 +456,8 @@ namespace Solar_Magic_Advance
             _MainForm.treeView1.Nodes[0].Nodes[3].Text += LevelCard.level_header.lvl_num.ToString();
             _MainForm.treeView1.Nodes[0].Nodes[4].Text += LevelCard.getLevelIcon(LevelCard.level_header.lvl_icon);
             _MainForm.treeView1.Nodes[0].Nodes[5].Text += LevelCard.level_header.lvl_name;
+
+            //Objects
         }
 
         public static void LoadLevel(Form1 _MainForm, string filename, Stream file)
@@ -445,11 +477,29 @@ namespace Solar_Magic_Advance
             header.lvl_num = (byte)file.ReadByte();
             header.lvl_icon = (byte)file.ReadByte();
 
-            if (header.eCoin == 0)
-                file.Seek(0x40, SeekOrigin.Begin);
-            else
-                file.Seek(0x180, SeekOrigin.Begin);
+            file.Seek(0x40, SeekOrigin.Begin);
+            if (header.eCoin != 0)
+            {
+                //Load eCoin
+                LevelCard.eCoin eCoin;
+                ushort[] pal = new ushort[16];
+                byte[] gfx = new byte[0x120];
 
+                for (int i = 0; i < pal.Length; i++)
+                    pal[i] = (ushort)(file.ReadByte() | (file.ReadByte() << 8));
+
+                for (int i = 0; i < gfx.Length; i++)
+                    gfx[i] = (byte)file.ReadByte();
+
+                eCoin.pal = pal;
+                eCoin.gfx = gfx;
+
+                LevelCard.level_eCoin = eCoin;
+
+                file.Seek(0x180, SeekOrigin.Begin);
+            }
+
+                //Level Name
             byte[] name = new byte[21];
             for (int i = 0; i < 21; i++)
             {
@@ -462,8 +512,10 @@ namespace Solar_Magic_Advance
 
             LevelCard.level_header = header;
 
-            UpdateTreeView(_MainForm);
             //Load Objects
+            
+            //Update TreeView
+            UpdateTreeView(_MainForm);
         }
     }
 }

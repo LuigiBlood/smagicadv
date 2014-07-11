@@ -29,79 +29,79 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("eCoin: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Ace Coins: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Level Set: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Level Number: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Level Icon: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Level Name: ", 2, 2);
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Header", 2, 2, new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Header", 2, 2);
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Room 0", 6, 6, new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Header", 2, 2);
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
-            treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Room 1", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode18,
-            treeNode19,
-            treeNode20,
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Header", 2, 2);
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Room 2", 8, 8, new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29,
-            treeNode30});
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Header", 2, 2);
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Room 3", 9, 9, new System.Windows.Forms.TreeNode[] {
-            treeNode32,
-            treeNode34,
-            treeNode35,
-            treeNode36,
-            treeNode37,
-            treeNode38});
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("eCoin: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Ace Coins: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Level Set: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Level Number: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Level Icon: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Level Name: ", 2, 2);
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Header", 2, 2, new System.Windows.Forms.TreeNode[] {
+            treeNode40,
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44,
+            treeNode45});
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Header", 2, 2);
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode48});
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Room 0", 6, 6, new System.Windows.Forms.TreeNode[] {
+            treeNode47,
+            treeNode49,
+            treeNode50,
+            treeNode51,
+            treeNode52,
+            treeNode53});
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Header", 2, 2);
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode56});
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Room 1", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode55,
+            treeNode57,
+            treeNode58,
+            treeNode59,
+            treeNode60,
+            treeNode61});
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("Header", 2, 2);
+            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode64});
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
+            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
+            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
+            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
+            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Room 2", 8, 8, new System.Windows.Forms.TreeNode[] {
+            treeNode63,
+            treeNode65,
+            treeNode66,
+            treeNode67,
+            treeNode68,
+            treeNode69});
+            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("Settings", 2, 2);
+            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("Header", 2, 2);
+            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Objects", 4, 4, new System.Windows.Forms.TreeNode[] {
+            treeNode72});
+            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Sprites", 11, 11);
+            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Warps", 12, 12);
+            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Block Path", 1, 1);
+            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Auto-Scroll", 0, 0);
+            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Room 3", 9, 9, new System.Windows.Forms.TreeNode[] {
+            treeNode71,
+            treeNode73,
+            treeNode74,
+            treeNode75,
+            treeNode76,
+            treeNode77});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,6 +124,8 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog_Level = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eCoinEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +133,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(406, 24);
@@ -276,168 +279,168 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(0, 47);
             this.treeView1.Name = "treeView1";
-            treeNode1.ImageIndex = 2;
-            treeNode1.Name = "head_ecoin";
-            treeNode1.SelectedImageIndex = 2;
-            treeNode1.Text = "eCoin: ";
-            treeNode2.ImageIndex = 2;
-            treeNode2.Name = "head_ace";
-            treeNode2.SelectedImageIndex = 2;
-            treeNode2.Text = "Ace Coins: ";
-            treeNode3.ImageIndex = 2;
-            treeNode3.Name = "head_set";
-            treeNode3.SelectedImageIndex = 2;
-            treeNode3.Text = "Level Set: ";
-            treeNode4.ImageIndex = 2;
-            treeNode4.Name = "head_num";
-            treeNode4.SelectedImageIndex = 2;
-            treeNode4.Text = "Level Number: ";
-            treeNode5.ImageIndex = 2;
-            treeNode5.Name = "head_icon";
-            treeNode5.SelectedImageIndex = 2;
-            treeNode5.Text = "Level Icon: ";
-            treeNode6.ImageIndex = 2;
-            treeNode6.Name = "head_name";
-            treeNode6.SelectedImageIndex = 2;
-            treeNode6.Text = "Level Name: ";
-            treeNode7.ImageIndex = 2;
-            treeNode7.Name = "header";
-            treeNode7.SelectedImageIndex = 2;
-            treeNode7.Text = "Header";
-            treeNode8.ImageIndex = 2;
-            treeNode8.Name = "room0_set";
-            treeNode8.SelectedImageIndex = 2;
-            treeNode8.Text = "Settings";
-            treeNode9.ImageIndex = 2;
-            treeNode9.Name = "room0_objhead";
-            treeNode9.SelectedImageIndex = 2;
-            treeNode9.Text = "Header";
-            treeNode10.ImageIndex = 4;
-            treeNode10.Name = "room0_obj";
-            treeNode10.SelectedImageIndex = 4;
-            treeNode10.Text = "Objects";
-            treeNode11.ImageIndex = 11;
-            treeNode11.Name = "room0_spr";
-            treeNode11.SelectedImageIndex = 11;
-            treeNode11.Text = "Sprites";
-            treeNode12.ImageIndex = 12;
-            treeNode12.Name = "room0_warp";
-            treeNode12.SelectedImageIndex = 12;
-            treeNode12.Text = "Warps";
-            treeNode13.ImageIndex = 1;
-            treeNode13.Name = "room0_blkpth";
-            treeNode13.SelectedImageIndex = 1;
-            treeNode13.Text = "Block Path";
-            treeNode14.ImageIndex = 0;
-            treeNode14.Name = "room0_autoscr";
-            treeNode14.SelectedImageIndex = 0;
-            treeNode14.Text = "Auto-Scroll";
-            treeNode15.ImageIndex = 6;
-            treeNode15.Name = "room0";
-            treeNode15.SelectedImageIndex = 6;
-            treeNode15.Text = "Room 0";
-            treeNode16.ImageIndex = 2;
-            treeNode16.Name = "room1_set";
-            treeNode16.SelectedImageIndex = 2;
-            treeNode16.Text = "Settings";
-            treeNode17.ImageIndex = 2;
-            treeNode17.Name = "room1_objhead";
-            treeNode17.SelectedImageIndex = 2;
-            treeNode17.Text = "Header";
-            treeNode18.ImageIndex = 4;
-            treeNode18.Name = "room1_obj";
-            treeNode18.SelectedImageIndex = 4;
-            treeNode18.Text = "Objects";
-            treeNode19.ImageIndex = 11;
-            treeNode19.Name = "room1_spr";
-            treeNode19.SelectedImageIndex = 11;
-            treeNode19.Text = "Sprites";
-            treeNode20.ImageIndex = 12;
-            treeNode20.Name = "room1_warp";
-            treeNode20.SelectedImageIndex = 12;
-            treeNode20.Text = "Warps";
-            treeNode21.ImageIndex = 1;
-            treeNode21.Name = "room1_blkpth";
-            treeNode21.SelectedImageIndex = 1;
-            treeNode21.Text = "Block Path";
-            treeNode22.ImageIndex = 0;
-            treeNode22.Name = "room1_autoscr";
-            treeNode22.SelectedImageIndex = 0;
-            treeNode22.Text = "Auto-Scroll";
-            treeNode23.ImageIndex = 7;
-            treeNode23.Name = "room1";
-            treeNode23.SelectedImageIndex = 7;
-            treeNode23.Text = "Room 1";
-            treeNode24.ImageIndex = 2;
-            treeNode24.Name = "room2_set";
-            treeNode24.SelectedImageIndex = 2;
-            treeNode24.Text = "Settings";
-            treeNode25.ImageIndex = 2;
-            treeNode25.Name = "room2_objhead";
-            treeNode25.SelectedImageIndex = 2;
-            treeNode25.Text = "Header";
-            treeNode26.ImageIndex = 4;
-            treeNode26.Name = "room2_obj";
-            treeNode26.SelectedImageIndex = 4;
-            treeNode26.Text = "Objects";
-            treeNode27.ImageIndex = 11;
-            treeNode27.Name = "room2_spr";
-            treeNode27.SelectedImageIndex = 11;
-            treeNode27.Text = "Sprites";
-            treeNode28.ImageIndex = 12;
-            treeNode28.Name = "room2_warp";
-            treeNode28.SelectedImageIndex = 12;
-            treeNode28.Text = "Warps";
-            treeNode29.ImageIndex = 1;
-            treeNode29.Name = "room2_blkpth";
-            treeNode29.SelectedImageIndex = 1;
-            treeNode29.Text = "Block Path";
-            treeNode30.ImageIndex = 0;
-            treeNode30.Name = "room2_autoscr";
-            treeNode30.SelectedImageIndex = 0;
-            treeNode30.Text = "Auto-Scroll";
-            treeNode31.ImageIndex = 8;
-            treeNode31.Name = "room2";
-            treeNode31.SelectedImageIndex = 8;
-            treeNode31.Text = "Room 2";
-            treeNode32.ImageIndex = 2;
-            treeNode32.Name = "room3_set";
-            treeNode32.SelectedImageIndex = 2;
-            treeNode32.Text = "Settings";
-            treeNode33.ImageIndex = 2;
-            treeNode33.Name = "room3_objhead";
-            treeNode33.SelectedImageIndex = 2;
-            treeNode33.Text = "Header";
-            treeNode34.ImageIndex = 4;
-            treeNode34.Name = "room3_objhead";
-            treeNode34.SelectedImageIndex = 4;
-            treeNode34.Text = "Objects";
-            treeNode35.ImageIndex = 11;
-            treeNode35.Name = "room3_spr";
-            treeNode35.SelectedImageIndex = 11;
-            treeNode35.Text = "Sprites";
-            treeNode36.ImageIndex = 12;
-            treeNode36.Name = "room3_warp";
-            treeNode36.SelectedImageIndex = 12;
-            treeNode36.Text = "Warps";
-            treeNode37.ImageIndex = 1;
-            treeNode37.Name = "room3_blkpth";
-            treeNode37.SelectedImageIndex = 1;
-            treeNode37.Text = "Block Path";
-            treeNode38.ImageIndex = 0;
-            treeNode38.Name = "room3_autoscr";
-            treeNode38.SelectedImageIndex = 0;
-            treeNode38.Text = "Auto-Scroll";
-            treeNode39.ImageIndex = 9;
-            treeNode39.Name = "room3";
-            treeNode39.SelectedImageIndex = 9;
-            treeNode39.Text = "Room 3";
+            treeNode40.ImageIndex = 2;
+            treeNode40.Name = "head_ecoin";
+            treeNode40.SelectedImageIndex = 2;
+            treeNode40.Text = "eCoin: ";
+            treeNode41.ImageIndex = 2;
+            treeNode41.Name = "head_ace";
+            treeNode41.SelectedImageIndex = 2;
+            treeNode41.Text = "Ace Coins: ";
+            treeNode42.ImageIndex = 2;
+            treeNode42.Name = "head_set";
+            treeNode42.SelectedImageIndex = 2;
+            treeNode42.Text = "Level Set: ";
+            treeNode43.ImageIndex = 2;
+            treeNode43.Name = "head_num";
+            treeNode43.SelectedImageIndex = 2;
+            treeNode43.Text = "Level Number: ";
+            treeNode44.ImageIndex = 2;
+            treeNode44.Name = "head_icon";
+            treeNode44.SelectedImageIndex = 2;
+            treeNode44.Text = "Level Icon: ";
+            treeNode45.ImageIndex = 2;
+            treeNode45.Name = "head_name";
+            treeNode45.SelectedImageIndex = 2;
+            treeNode45.Text = "Level Name: ";
+            treeNode46.ImageIndex = 2;
+            treeNode46.Name = "header";
+            treeNode46.SelectedImageIndex = 2;
+            treeNode46.Text = "Header";
+            treeNode47.ImageIndex = 2;
+            treeNode47.Name = "room0_set";
+            treeNode47.SelectedImageIndex = 2;
+            treeNode47.Text = "Settings";
+            treeNode48.ImageIndex = 2;
+            treeNode48.Name = "room0_objhead";
+            treeNode48.SelectedImageIndex = 2;
+            treeNode48.Text = "Header";
+            treeNode49.ImageIndex = 4;
+            treeNode49.Name = "room0_obj";
+            treeNode49.SelectedImageIndex = 4;
+            treeNode49.Text = "Objects";
+            treeNode50.ImageIndex = 11;
+            treeNode50.Name = "room0_spr";
+            treeNode50.SelectedImageIndex = 11;
+            treeNode50.Text = "Sprites";
+            treeNode51.ImageIndex = 12;
+            treeNode51.Name = "room0_warp";
+            treeNode51.SelectedImageIndex = 12;
+            treeNode51.Text = "Warps";
+            treeNode52.ImageIndex = 1;
+            treeNode52.Name = "room0_blkpth";
+            treeNode52.SelectedImageIndex = 1;
+            treeNode52.Text = "Block Path";
+            treeNode53.ImageIndex = 0;
+            treeNode53.Name = "room0_autoscr";
+            treeNode53.SelectedImageIndex = 0;
+            treeNode53.Text = "Auto-Scroll";
+            treeNode54.ImageIndex = 6;
+            treeNode54.Name = "room0";
+            treeNode54.SelectedImageIndex = 6;
+            treeNode54.Text = "Room 0";
+            treeNode55.ImageIndex = 2;
+            treeNode55.Name = "room1_set";
+            treeNode55.SelectedImageIndex = 2;
+            treeNode55.Text = "Settings";
+            treeNode56.ImageIndex = 2;
+            treeNode56.Name = "room1_objhead";
+            treeNode56.SelectedImageIndex = 2;
+            treeNode56.Text = "Header";
+            treeNode57.ImageIndex = 4;
+            treeNode57.Name = "room1_obj";
+            treeNode57.SelectedImageIndex = 4;
+            treeNode57.Text = "Objects";
+            treeNode58.ImageIndex = 11;
+            treeNode58.Name = "room1_spr";
+            treeNode58.SelectedImageIndex = 11;
+            treeNode58.Text = "Sprites";
+            treeNode59.ImageIndex = 12;
+            treeNode59.Name = "room1_warp";
+            treeNode59.SelectedImageIndex = 12;
+            treeNode59.Text = "Warps";
+            treeNode60.ImageIndex = 1;
+            treeNode60.Name = "room1_blkpth";
+            treeNode60.SelectedImageIndex = 1;
+            treeNode60.Text = "Block Path";
+            treeNode61.ImageIndex = 0;
+            treeNode61.Name = "room1_autoscr";
+            treeNode61.SelectedImageIndex = 0;
+            treeNode61.Text = "Auto-Scroll";
+            treeNode62.ImageIndex = 7;
+            treeNode62.Name = "room1";
+            treeNode62.SelectedImageIndex = 7;
+            treeNode62.Text = "Room 1";
+            treeNode63.ImageIndex = 2;
+            treeNode63.Name = "room2_set";
+            treeNode63.SelectedImageIndex = 2;
+            treeNode63.Text = "Settings";
+            treeNode64.ImageIndex = 2;
+            treeNode64.Name = "room2_objhead";
+            treeNode64.SelectedImageIndex = 2;
+            treeNode64.Text = "Header";
+            treeNode65.ImageIndex = 4;
+            treeNode65.Name = "room2_obj";
+            treeNode65.SelectedImageIndex = 4;
+            treeNode65.Text = "Objects";
+            treeNode66.ImageIndex = 11;
+            treeNode66.Name = "room2_spr";
+            treeNode66.SelectedImageIndex = 11;
+            treeNode66.Text = "Sprites";
+            treeNode67.ImageIndex = 12;
+            treeNode67.Name = "room2_warp";
+            treeNode67.SelectedImageIndex = 12;
+            treeNode67.Text = "Warps";
+            treeNode68.ImageIndex = 1;
+            treeNode68.Name = "room2_blkpth";
+            treeNode68.SelectedImageIndex = 1;
+            treeNode68.Text = "Block Path";
+            treeNode69.ImageIndex = 0;
+            treeNode69.Name = "room2_autoscr";
+            treeNode69.SelectedImageIndex = 0;
+            treeNode69.Text = "Auto-Scroll";
+            treeNode70.ImageIndex = 8;
+            treeNode70.Name = "room2";
+            treeNode70.SelectedImageIndex = 8;
+            treeNode70.Text = "Room 2";
+            treeNode71.ImageIndex = 2;
+            treeNode71.Name = "room3_set";
+            treeNode71.SelectedImageIndex = 2;
+            treeNode71.Text = "Settings";
+            treeNode72.ImageIndex = 2;
+            treeNode72.Name = "room3_objhead";
+            treeNode72.SelectedImageIndex = 2;
+            treeNode72.Text = "Header";
+            treeNode73.ImageIndex = 4;
+            treeNode73.Name = "room3_objhead";
+            treeNode73.SelectedImageIndex = 4;
+            treeNode73.Text = "Objects";
+            treeNode74.ImageIndex = 11;
+            treeNode74.Name = "room3_spr";
+            treeNode74.SelectedImageIndex = 11;
+            treeNode74.Text = "Sprites";
+            treeNode75.ImageIndex = 12;
+            treeNode75.Name = "room3_warp";
+            treeNode75.SelectedImageIndex = 12;
+            treeNode75.Text = "Warps";
+            treeNode76.ImageIndex = 1;
+            treeNode76.Name = "room3_blkpth";
+            treeNode76.SelectedImageIndex = 1;
+            treeNode76.Text = "Block Path";
+            treeNode77.ImageIndex = 0;
+            treeNode77.Name = "room3_autoscr";
+            treeNode77.SelectedImageIndex = 0;
+            treeNode77.Text = "Auto-Scroll";
+            treeNode78.ImageIndex = 9;
+            treeNode78.Name = "room3";
+            treeNode78.SelectedImageIndex = 9;
+            treeNode78.Text = "Room 3";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode15,
-            treeNode23,
-            treeNode31,
-            treeNode39});
+            treeNode46,
+            treeNode54,
+            treeNode62,
+            treeNode70,
+            treeNode78});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(406, 237);
             this.treeView1.TabIndex = 3;
@@ -465,6 +468,21 @@
             this.openFileDialog_Level.Filter = "Uncompressed Level (*.level)|*.level|All files|*.*";
             this.openFileDialog_Level.Title = "Load Level Card...";
             this.openFileDialog_Level.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_Level_FileOk);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eCoinEditorToolStripMenuItem});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
+            // eCoinEditorToolStripMenuItem
+            // 
+            this.eCoinEditorToolStripMenuItem.Name = "eCoinEditorToolStripMenuItem";
+            this.eCoinEditorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eCoinEditorToolStripMenuItem.Text = "eCoin Editor";
+            this.eCoinEditorToolStripMenuItem.Click += new System.EventHandler(this.eCoinEditorToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -511,6 +529,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog_Level;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         public System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eCoinEditorToolStripMenuItem;
     }
 }
 
