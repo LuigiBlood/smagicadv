@@ -84,6 +84,7 @@
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // numericUpDownFloor
             // 
@@ -169,7 +170,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Edit eCoin";
-            this.Validating += new System.ComponentModel.CancelEventHandler(this.eCoinEditor_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.GFX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).EndInit();

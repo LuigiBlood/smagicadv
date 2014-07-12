@@ -183,7 +183,9 @@ namespace Solar_Magic_Advance
         private void GFX_MouseMove(object sender, MouseEventArgs e)
         {
             //Draw
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (e.Button == System.Windows.Forms.MouseButtons.Left
+                && e.X > 0 && e.X < 192
+                && e.Y > 0 && e.Y < 192)
             {
                 eCoinGFX[e.X / 8, e.Y / 8] = (byte)colorID;
                 updateGraphics();
@@ -191,9 +193,46 @@ namespace Solar_Magic_Advance
         }
 
         //Saving current eCoin
-        private void eCoinEditor_Validating(object sender, CancelEventArgs e)
+        private void buttonOK_Click(object sender, EventArgs e)
         {
-            //TODO
+            ushort[] PALData = new ushort[16];
+            byte[] GFXData = new byte[0x120];
+
+            //Save Header Data
+            header.eCoin = (byte)((numericUpDownFloor.Value * 8) + numericUpDownPos.Value);
+
+            //PAL Data Save
+            for (int i = 0; i < 16; i++)
+            {
+                byte Red = (byte)(((float)eCoinPAL[i].R / 255) * 31);
+                byte Green = (byte)(((float)eCoinPAL[i].G / 255) * 31);
+                byte Blue = (byte)(((float)eCoinPAL[i].B / 255) * 31);
+
+                PALData[i] = (ushort)(Red | (Green << 5) | (Blue << 10));
+            }
+
+            eCoinData.pal = PALData;
+
+            //GFX Data Save
+            for (int tile = 0; tile < 9; tile++)
+                for (int y = 0; y < 8; y++)
+                    for (int x = 0; x < 8; x++)
+                    {
+                        //first nibble
+                        GFXData[(x / 2) + (y * 4) + (tile * 32)] =
+                            (byte)(eCoinGFX[x + ((tile % 3) * 8), y + ((tile / 3) * 8)] & 0x0F);
+
+                        //second nibble
+                        x++;
+                        GFXData[(x / 2) + (y * 4) + (tile * 32)] |=
+                            (byte)((eCoinGFX[x + ((tile % 3) * 8), y + ((tile / 3) * 8)] << 4) & 0xF0);
+                    }
+
+            eCoinData.gfx = GFXData;
+
+            LevelCard.level_header = header;
+            LevelCard.level_eCoin = eCoinData;
+            this.Close();
         }
     }
 }
