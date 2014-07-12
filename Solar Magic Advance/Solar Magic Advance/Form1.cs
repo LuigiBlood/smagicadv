@@ -30,6 +30,8 @@ namespace Solar_Magic_Advance
         {
             eCoinEditor window = new eCoinEditor();
             window.ShowDialog();
+            Program.InitTreeView(this);
+            Program.UpdateTreeView(this);
         }
     }
 }

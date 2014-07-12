@@ -37,10 +37,12 @@
             this.numericUpDownPos = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.pictureBoxSelected = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GFX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PAL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // GFX
@@ -54,7 +56,6 @@
             this.GFX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GFX_MouseClick);
             this.GFX.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GFX_MouseDown);
             this.GFX.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GFX_MouseMove);
-            this.GFX.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GFX_MouseUp);
             // 
             // PAL
             // 
@@ -86,7 +87,7 @@
             // 
             // numericUpDownFloor
             // 
-            this.numericUpDownFloor.Location = new System.Drawing.Point(51, 259);
+            this.numericUpDownFloor.Location = new System.Drawing.Point(71, 259);
             this.numericUpDownFloor.Maximum = new decimal(new int[] {
             2,
             0,
@@ -99,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 261);
+            this.label1.Location = new System.Drawing.Point(35, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 5;
@@ -136,6 +137,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Position:";
             // 
+            // pictureBoxSelected
+            // 
+            this.pictureBoxSelected.Location = new System.Drawing.Point(2, 255);
+            this.pictureBoxSelected.Name = "pictureBoxSelected";
+            this.pictureBoxSelected.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxSelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSelected.TabIndex = 8;
+            this.pictureBoxSelected.TabStop = false;
+            // 
             // eCoinEditor
             // 
             this.AcceptButton = this.buttonOK;
@@ -143,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(196, 309);
+            this.Controls.Add(this.pictureBoxSelected);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDownPos);
             this.Controls.Add(this.label1);
@@ -158,10 +169,12 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Edit eCoin";
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.eCoinEditor_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.GFX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PAL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelected)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +191,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.PictureBox pictureBoxSelected;
     }
 }

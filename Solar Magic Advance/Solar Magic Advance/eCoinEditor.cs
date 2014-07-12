@@ -21,15 +21,12 @@ namespace Solar_Magic_Advance
         Color[] eCoinPAL;
         int colorID;
 
-        bool drawing;
-
         public eCoinEditor()
         {
             InitializeComponent();
+
             header = LevelCard.level_header;
             eCoinData = LevelCard.level_eCoin;
-
-            drawing = false;
 
             if (LevelCard.level_eCoin.gfx != null)
             {
@@ -42,6 +39,7 @@ namespace Solar_Magic_Advance
 
                 //Get Palette
                 loadPalette();
+                updateSelected();
 
                 //Get GFX to Bitmap
                 loadGraphics();
@@ -56,6 +54,7 @@ namespace Solar_Magic_Advance
             }
         }
 
+        //Load eCoin Palette
         public void loadPalette()
         {
             int Red;
@@ -74,6 +73,7 @@ namespace Solar_Magic_Advance
             updatePalette();
         }
 
+        //Update eCoin Palette on window
         public void updatePalette()
         {
             Graphics palette = Graphics.FromImage(eCoinPALI);
@@ -89,6 +89,7 @@ namespace Solar_Magic_Advance
             PAL.Update();
         }
 
+        //Load eCoin GFX
         public void loadGraphics()
         {
             for (int i = 0; i < 9; i++) //Tiles
@@ -105,6 +106,7 @@ namespace Solar_Magic_Advance
             updateGraphics();
         }
 
+        //Update eCoin GFX on window
         public void updateGraphics()
         {
             SolidBrush brush;
@@ -121,11 +123,29 @@ namespace Solar_Magic_Advance
             GFX.Update();
         }
 
+        //Update Selected Color on window
+        public void updateSelected()
+        {
+            SolidBrush brush;
+            Bitmap sel = new Bitmap(24, 24);
+            Graphics graphics = Graphics.FromImage(sel);
+
+            brush = new SolidBrush(eCoinPAL[colorID]);
+            graphics.FillRectangle(brush, 0, 0, 24, 24);
+
+            pictureBoxSelected.Image = sel;
+            pictureBoxSelected.Update();
+        }
+
+        //Palette Mouse Use
         private void PAL_MouseClick(object sender, MouseEventArgs e)
         {
             colorID = (e.X / 24) + ((e.Y / 24) * 8);
+            updateSelected();
+
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
+                colorDialog1.Color = eCoinPAL[colorID];
                 colorDialog1.ShowDialog();
                 eCoinPAL[colorID] = Color.FromArgb(
                     (int)(((((float)colorDialog1.Color.R / 255) * 31) / 31) * 255),
@@ -135,18 +155,24 @@ namespace Solar_Magic_Advance
 
                 updatePalette();
                 updateGraphics();
+                updateSelected();
             }
         }
 
+        //GFX Mouse Use
         private void GFX_MouseClick(object sender, MouseEventArgs e)
         {
+            //Color Picker
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
                 colorID = eCoinGFX[e.X / 8, e.Y / 8];
+                updateSelected();
+            }
         }
 
         private void GFX_MouseDown(object sender, MouseEventArgs e)
         {
-            drawing = true;
+            //Draw
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 eCoinGFX[e.X / 8, e.Y / 8] = (byte)colorID;
@@ -156,6 +182,7 @@ namespace Solar_Magic_Advance
 
         private void GFX_MouseMove(object sender, MouseEventArgs e)
         {
+            //Draw
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 eCoinGFX[e.X / 8, e.Y / 8] = (byte)colorID;
@@ -163,9 +190,10 @@ namespace Solar_Magic_Advance
             }
         }
 
-        private void GFX_MouseUp(object sender, MouseEventArgs e)
+        //Saving current eCoin
+        private void eCoinEditor_Validating(object sender, CancelEventArgs e)
         {
-            drawing = false;
+            //TODO
         }
     }
 }
